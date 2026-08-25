@@ -218,4 +218,29 @@ public class SimpleGraphics extends Application {
         }
         return c;
     }
-}
+
+    // AI Attribution: Generated with Gemini.
+    public static void drawRabbitEars(double x, double y, double width, double height, String mainColor, String innerColor) {
+        // Outer ears
+        gc.setFill(toColor(mainColor));
+        gc.setStroke(toColor("black"));
+        gc.setLineWidth(3);
+
+        // Left outer ear
+        gc.fillOval(x - width - 5, y - height, width, height);
+        gc.strokeOval(x - width - 5, y - height, width, height);
+
+        // Right outer ear
+        gc.fillOval(x + 5, y - height, width, height);
+        gc.strokeOval(x + 5, y - height, width, height);
+
+        // Inner ears
+        gc.setFill(toColor(innerColor));
+
+        // Left inner ear
+        gc.fillOval(x - width - 5 + width * 0.15, y - height + height * 0.15, width * 0.7, height * 0.7);
+
+        // Right inner ear
+        gc.fillOval(x + 5 + width * 0.15, y - height + height * 0.15, width * 0.7, height * 0.7);
+  }
+} 
