@@ -220,6 +220,7 @@ public class SimpleGraphics extends Application {
     }
 
     // AI Attribution: Generated with Gemini.
+    // rabbit ears
     public static void drawRabbitEars(double x, double y, double width, double height, String mainColor, String innerColor) {
         // Outer ears
         gc.setFill(toColor(mainColor));
@@ -243,4 +244,39 @@ public class SimpleGraphics extends Application {
         // Right inner ear
         gc.fillOval(x + 5 + width * 0.15, y - height + height * 0.15, width * 0.7, height * 0.7);
   }
-} 
+
+    public static void drawRabbitHead(double centerX, double centerY, double width, double height, String faceColor) {
+   // face colour
+        gc.setFill(toColor(faceColor));
+    gc.setStroke(toColor("black"));
+    gc.setLineWidth(3);
+
+    // Head base (oval)
+    gc.fillOval(centerX - width / 2.0, centerY - height / 2.0, width, height);
+    gc.strokeOval(centerX - width / 2.0, centerY - height / 2.0, width, height);
+
+    // Eyebrows (closed eyes / curved arches)
+    gc.strokeArc(centerX - width * 0.3, centerY - height * 0.25, width * 0.25, height * 0.2, 20, 140, javafx.scene.shape.ArcType.OPEN);
+    gc.strokeArc(centerX + width * 0.05, centerY - height * 0.25, width * 0.25, height * 0.2, 20, 140, javafx.scene.shape.ArcType.OPEN);
+
+    // Closed eyes (sleeping arches)
+    gc.strokeArc(centerX - width * 0.25, centerY - height * 0.05, width * 0.2, height * 0.12, 190, 160, javafx.scene.shape.ArcType.OPEN);
+    gc.strokeArc(centerX + width * 0.05, centerY - height * 0.05, width * 0.2, height * 0.12, 190, 160, javafx.scene.shape.ArcType.OPEN);
+
+    // Nose and mouth (small 'Y' / cat mouth shape)
+    gc.strokeLine(centerX, centerY + height * 0.05, centerX, centerY + height * 0.12);
+    gc.strokeArc(centerX - width * 0.08, centerY + height * 0.08, width * 0.08, height * 0.08, 180, 180, javafx.scene.shape.ArcType.OPEN);
+    gc.strokeArc(centerX, centerY + height * 0.08, width * 0.08, height * 0.08, 180, 180, javafx.scene.shape.ArcType.OPEN);
+
+    // Rosy cheeks (blush lines)
+    gc.setStroke(toColor("#ff7b9c"));
+    gc.setLineWidth(2);
+    for (int i = 0; i < 4; i++) {
+        // Left cheek hatch lines
+        gc.strokeLine(centerX - width * 0.35 + (i * 4), centerY + height * 0.08, centerX - width * 0.33 + (i * 4), centerY + height * 0.18);
+        // Right cheek hatch lines
+        gc.strokeLine(centerX + width * 0.23 + (i * 4), centerY + height * 0.08, centerX + width * 0.25 + (i * 4), centerY + height * 0.18);
+    }
+}
+}
+    

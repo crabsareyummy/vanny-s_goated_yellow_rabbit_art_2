@@ -1,7 +1,5 @@
 package org.example;
 
-import java.util.List;
-
 /**
  * MyPicture.java
  * --------------
@@ -18,7 +16,9 @@ public class MyPicture {
         // Fill the background
         SimpleGraphics.fillBackground("white");
 
-        SimpleGraphics.drawRabbitEars(300, 150, 25, 90, "#f8cf7f", "pink");
+        SimpleGraphics.drawRabbitEars(300, 150, 25, 90, "#fff5e1", "pink");
+
+        SimpleGraphics.drawRabbitHead(300, 210, 160, 140, "#fff5e1"); 
     }
 
     public static void main(String[] args) {
