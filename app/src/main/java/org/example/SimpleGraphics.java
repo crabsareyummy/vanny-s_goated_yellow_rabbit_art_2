@@ -302,4 +302,28 @@ public class SimpleGraphics extends Application {
         gc.strokeArc(centerX - width * 0.05, centerY + height * 0.1, width * 0.4, height * 0.35, 200, 160, javafx.scene.shape.ArcType.OPEN);
     }
 
+    public static void drawRabbitLeaf(double centerX, double centerY, double width, double height, String leafColor) {
+        gc.setFill(toColor(leafColor));
+        gc.setStroke(toColor("black"));
+        gc.setLineWidth(3);
+
+        // Leaf pad base shape
+        gc.fillOval(centerX - width / 2.0, centerY - height / 2.0, width, height);
+        gc.strokeOval(centerX - width / 2.0, centerY - height / 2.0, width, height);
+
+        // Scalloped/wavy bumps along the leaf border
+        double bumpRadius = width * 0.12;
+        for (int i = -3; i <= 3; i++) {
+            double xOffset = i * (width * 0.13);
+            gc.fillOval(centerX + xOffset - bumpRadius / 2.0, centerY + (height * 0.25) - bumpRadius / 2.0, bumpRadius, bumpRadius);
+            gc.strokeOval(centerX + xOffset - bumpRadius / 2.0, centerY + (height * 0.25) - bumpRadius / 2.0, bumpRadius, bumpRadius);
+        }
+        // Small stem at the very bottom center
+        gc.strokeLine(centerX, centerY + height / 2.0, centerX, centerY + height / 2.0 + 12);
+    }
+
+    public static void drawSparkleGlow(double centerX, double centerY, double radius, String glowColor) {
+        gc.setFill(toColor(glowColor));
+        gc.fillOval(centerX - radius, centerY - radius, radius * 2, radius * 2);
+    }
 }
