@@ -278,5 +278,28 @@ public class SimpleGraphics extends Application {
         gc.strokeLine(centerX + width * 0.23 + (i * 4), centerY + height * 0.08, centerX + width * 0.25 + (i * 4), centerY + height * 0.18);
     }
 }
+
+    public static void drawRabbitBody(double centerX, double centerY, double width, double height, String bodyColor) {
+        // rabbit body
+        gc.setFill(toColor(bodyColor));
+        gc.setStroke(toColor("black"));
+        gc.setLineWidth(3);
+
+        // Body (bottom half, sitting/meditating pose)
+        gc.fillOval(centerX - width / 2.0, centerY - height / 2.0, width, height);
+        gc.strokeOval(centerX - width / 2.0, centerY - height / 2.0, width, height);
+
+        // Tail (small curved motion/tuft lines on the right side)
+        gc.strokeArc(centerX + width * 0.42, centerY - height * 0.1, width * 0.15, height * 0.3, 270, 180, javafx.scene.shape.ArcType.OPEN);
+        gc.strokeArc(centerX + width * 0.5, centerY - height * 0.05, width * 0.12, height * 0.2, 270, 180, javafx.scene.shape.ArcType.OPEN);
+
+        // Folded arms (hands together in front)
+        gc.strokeArc(centerX - width * 0.3, centerY - height * 0.3, width * 0.35, height * 0.3, 220, 160, javafx.scene.shape.ArcType.OPEN);
+        gc.strokeArc(centerX - width * 0.05, centerY - height * 0.3, width * 0.35, height * 0.3, 160, 160, javafx.scene.shape.ArcType.OPEN);
+
+        // Cross-legged feet at the bottom
+        gc.strokeArc(centerX - width * 0.35, centerY + height * 0.1, width * 0.4, height * 0.35, 180, 160, javafx.scene.shape.ArcType.OPEN);
+        gc.strokeArc(centerX - width * 0.05, centerY + height * 0.1, width * 0.4, height * 0.35, 200, 160, javafx.scene.shape.ArcType.OPEN);
+    }
+
 }
-    

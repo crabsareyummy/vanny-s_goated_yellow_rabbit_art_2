@@ -18,6 +18,8 @@ public class MyPicture {
 
         SimpleGraphics.drawRabbitEars(300, 150, 25, 90, "#fff5e1", "pink");
 
+        SimpleGraphics.drawRabbitBody(300, 290, 150, 130, "#fff5e1");
+
         SimpleGraphics.drawRabbitHead(300, 210, 160, 140, "#fff5e1"); 
     }
 
@@ -26,4 +28,3 @@ public class MyPicture {
         SimpleGraphics.start(MyPicture::drawPicture, 600, 400);
     }
 }
-
