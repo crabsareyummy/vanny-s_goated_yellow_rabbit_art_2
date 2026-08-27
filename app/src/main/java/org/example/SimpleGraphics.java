@@ -350,4 +350,23 @@ public class SimpleGraphics extends Application {
         gc.fillOval(centerX - size * 0.2, centerY - size * 0.2, size * 0.4, size * 0.3);
         gc.strokeOval(centerX - size * 0.2, centerY - size * 0.2, size * 0.4, size * 0.3);
     }
+
+    public static void drawStar(double centerX, double centerY, double radius, String starColor) {
+        gc.setFill(toColor(starColor));
+        gc.setStroke(toColor("black"));
+        gc.setLineWidth(2);
+
+        // Draw a 5-pointed star using a polygon
+        double[] xPoints = new double[10];
+        double[] yPoints = new double[10];
+        for (int i = 0; i < 10; i++) {
+            double angle = Math.PI / 5 * i - Math.PI / 2; // Start from the top
+            double r = (i % 2 == 0) ? radius : radius * 0.5; // Alternate between outer and inner points
+            xPoints[i] = centerX + r * Math.cos(angle);
+            yPoints[i] = centerY + r * Math.sin(angle);
+        }
+        gc.fillPolygon(xPoints, yPoints, 10);
+        gc.strokePolygon(xPoints, yPoints, 10);
+    }
+    
 }
