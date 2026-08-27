@@ -18,6 +18,14 @@ public class MyPicture {
 
         SimpleGraphics.drawSparkleGlow(300, 240, 160, "#ffffd0");
 
+        // 3. Lotus flowers peaking up from the bottom corners & center
+        // Left flower
+        SimpleGraphics.drawLotusFlower(60, 360, 35, "#ffb7c5", "#fff275"); 
+        // Middle flower (bottom center)
+        SimpleGraphics.drawLotusFlower(300, 380, 30, "#ffb7c5", "#fff275"); 
+        // Right flower
+        SimpleGraphics.drawLotusFlower(540, 350, 40, "#ffb7c5", "#fff275");
+
         SimpleGraphics.drawRabbitLeaf(300, 340, 180, 50, "#76b852");
 
         SimpleGraphics.drawRabbitEars(300, 150, 25, 90, "#fff5e1", "pink");
@@ -25,7 +33,7 @@ public class MyPicture {
         SimpleGraphics.drawRabbitBody(300, 290, 150, 130, "#fff5e1");
 
         SimpleGraphics.drawRabbitHead(300, 210, 160, 140, "#fff5e1"); 
-        
+       
     }
 
     public static void main(String[] args) {

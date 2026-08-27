@@ -326,4 +326,28 @@ public class SimpleGraphics extends Application {
         gc.setFill(toColor(glowColor));
         gc.fillOval(centerX - radius, centerY - radius, radius * 2, radius * 2);
     }
+
+// Lotus flowers
+    public static void drawLotusFlower(double centerX, double centerY, double size, String petalColor, String centerColor) {
+        gc.setFill(toColor(petalColor));
+        gc.setStroke(toColor("black"));
+        gc.setLineWidth(2);
+
+        // Outer left petal
+        gc.fillOval(centerX - size * 0.8, centerY - size * 0.3, size * 0.7, size * 0.5);
+        gc.strokeOval(centerX - size * 0.8, centerY - size * 0.3, size * 0.7, size * 0.5);
+
+        // Outer right petal
+        gc.fillOval(centerX + size * 0.1, centerY - size * 0.3, size * 0.7, size * 0.5);
+        gc.strokeOval(centerX + size * 0.1, centerY - size * 0.3, size * 0.7, size * 0.5);
+
+        // Center main petal
+        gc.fillOval(centerX - size * 0.35, centerY - size * 0.6, size * 0.7, size * 0.8);
+        gc.strokeOval(centerX - size * 0.35, centerY - size * 0.6, size * 0.7, size * 0.8);
+
+        // Inner yellow center
+        gc.setFill(toColor(centerColor));
+        gc.fillOval(centerX - size * 0.2, centerY - size * 0.2, size * 0.4, size * 0.3);
+        gc.strokeOval(centerX - size * 0.2, centerY - size * 0.2, size * 0.4, size * 0.3);
+    }
 }
