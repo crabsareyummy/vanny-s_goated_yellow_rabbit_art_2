@@ -33,6 +33,14 @@ public class MyPicture {
         SimpleGraphics.drawRabbitBody(300, 290, 150, 130, "#fff5e1");
 
         SimpleGraphics.drawRabbitHead(300, 210, 160, 140, "#fff5e1"); 
+
+        SimpleGraphics.drawStar(200, 200, 20, "#fff275");
+        SimpleGraphics.drawStar(250, 250, 20, "#fff275");
+        SimpleGraphics.drawStar(300, 300, 20, "#fff275");
+        SimpleGraphics.drawStar(350, 350, 20, "#fff275");
+        SimpleGraphics.drawStar(400, 400, 20, "#fff275");
+
+        
        
     }
 
