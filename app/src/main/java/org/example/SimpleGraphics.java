@@ -327,7 +327,7 @@ public class SimpleGraphics extends Application {
         gc.fillOval(centerX - radius, centerY - radius, radius * 2, radius * 2);
     }
 
-// Lotus flowers
+// Lotus flowers - Isaac fixed it (contribution)
     public static void drawLotusFlower(double centerX, double centerY, double size, String petalColor, String centerColor) {
         gc.setFill(toColor(petalColor));
         gc.setStroke(toColor("black"));
@@ -356,7 +356,7 @@ public class SimpleGraphics extends Application {
         gc.setStroke(toColor("black"));
         gc.setLineWidth(2);
 
-        // Draw a 5-pointed star using a polygon
+        // Draw a 5-pointed star using a polygon - Isaac Contribution
         double[] xPoints = new double[10];
         double[] yPoints = new double[10];
         for (int i = 0; i < 10; i++) {
